@@ -196,7 +196,14 @@ public class ProceduralAudioController : MonoBehaviour
             }
 
             double amplitudeDelta = targetAmplitude - currentAmplitude;
-            currentAmplitude += amplitudeDelta * (1.0 - Math.Exp(-dspTimeStep / dAttackTime));
+            if (amplitudeDelta > 0)
+            {
+                currentAmplitude += amplitudeDelta * (1.0 - Math.Exp(-dspTimeStep / dAttackTime));
+            }
+            else
+            {
+                currentAmplitude += amplitudeDelta * (1.0 - Math.Exp(-dspTimeStep / dReleaseTime));
+            }
             signalValue *= currentAmplitude / 10;
 
             float x = (float)signalValue;
@@ -212,38 +219,5 @@ public class ProceduralAudioController : MonoBehaviour
     {
         /* This function maps (converts) a Double value from one range to another */
         return toMin + (referenceValue - fromMin) * (toMax - toMin) / (fromMax - fromMin);
-    }
-
-    double GetAmplitude()
-    {
-        double amplitude = 0;
-        deltaTime = currentDspTime - dTriggerOnTime;
-
-        if (isKeyDown)
-        {
-            if (deltaTime <= dAttackTime)
-            {
-                amplitude = (deltaTime / dAttackTime) * dStartAmplitude;
-            }
-            if(deltaTime > dAttackTime && deltaTime <= (dAttackTime + dDecayTime))
-            {
-                amplitude = ((deltaTime - dAttackTime) / dDecayTime) * (dSustainAmplitude - dStartAmplitude) + dStartAmplitude;
-            }
-            if(deltaTime > dDecayTime + dAttackTime)
-            {
-                amplitude = dSustainAmplitude;
-            }
-        }
-        else
-        {
-            amplitude = ((currentDspTime - dTriggerOffTime) / dReleaseTime) * (0.0 - dSustainAmplitude) + dSustainAmplitude;
-        }
-
-        if (amplitude <= 0.0001)
-        {
-            amplitude = 0;
-        }
-
-        return amplitude;
     }
 }
