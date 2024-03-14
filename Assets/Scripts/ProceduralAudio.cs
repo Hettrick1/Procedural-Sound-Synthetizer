@@ -11,7 +11,9 @@ public class ProceduralAudioController : MonoBehaviour
         E,
         R,
         T,
-        Z
+        Y,
+        U,
+        I
     }
     public double dAttackTime = 0.1;
     double dReleaseTime = 0.2;
@@ -65,6 +67,8 @@ public class ProceduralAudioController : MonoBehaviour
 
     bool isKeyDown;
 
+    AudioReverbFilter filter;
+
     float mainFrequencyPreviousValue;
     private System.Random RandomNumber = new System.Random();
 
@@ -102,10 +106,17 @@ public class ProceduralAudioController : MonoBehaviour
             case KEYS.T :
                 keyCode = KeyCode.T;
                 break;
-            case KEYS.Z :
-                keyCode = KeyCode.Z;
+            case KEYS.Y :
+                keyCode = KeyCode.Y;
+                break;
+            case KEYS.U : 
+                keyCode = KeyCode.U;
+                break;
+            case KEYS.I : 
+                keyCode = KeyCode.I;
                 break;
         }
+        filter = GetComponent<AudioReverbFilter>();
     }
 
     void Update()
