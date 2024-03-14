@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
 
@@ -15,15 +13,9 @@ public class ProceduralAudioController : MonoBehaviour
         T,
         Z
     }
-    double deltaTime = 0;
-
     double dAttackTime = 0.1;
-    double dDecayTime = 0.01;
-    double dSustainAmplitude = 0.8;
     double dReleaseTime = 0.2;
-    double dStartAmplitude = 1;
-    double dTriggerOffTime = 0;
-    double dTriggerOnTime = 0;
+    double dStartAmplitude = 0.5;
 
     double currentAmplitude = 0.0;
     double targetAmplitude = 0.0;
@@ -32,22 +24,15 @@ public class ProceduralAudioController : MonoBehaviour
 
     private KeyCode keyCode;
 
-    double lastDspTime;
-
     SawWave sawAudioWave;
     SquareWave squareAudioWave;
     SinusWave sinusAudioWave;
 
-    SinusWave amplitudeModulationOscillator;
     SawWave frequencyModulationOscillator;
-
-    public bool autoPlay;
 
     [Header("Volume / Frequency")]
     [Range(0.0f, 1.0f)]
     float masterVolume = 0.1f;
-    float volumeModifier = 0;
-    float newVolumeModifier = 0;
     [Range(0, 2000)]
     public double mainFrequency = 500;
     [Space(10)]
@@ -67,10 +52,6 @@ public class ProceduralAudioController : MonoBehaviour
 
     [Space(10)]
 
-    [Header("Amplitude Modulation")]
-    public bool useAmplitudeModulation;
-    [Range(0.2f, 30.0f)]
-    public float amplitudeModulationOscillatorFrequency = 1.0f;
     [Header("Frequency Modulation")]
     public bool useFrequencyModulation;
     [Range(0.2f, 30.0f)]
@@ -79,8 +60,6 @@ public class ProceduralAudioController : MonoBehaviour
     public float frequencyModulationOscillatorIntensity = 10.0f;
 
     [Header("Out Values")]
-    [Range(0.0f, 1.0f)]
-    public float amplitudeModulationRangeOut;
     [Range(0.0f, 1.0f)]
     public float frequencyModulationRangeOut;
 
@@ -102,7 +81,6 @@ public class ProceduralAudioController : MonoBehaviour
         squareAudioWave = new SquareWave();
         sinusAudioWave = new SinusWave();
 
-        amplitudeModulationOscillator = new SinusWave();
         frequencyModulationOscillator = new SawWave();
 
         sampleRate = AudioSettings.outputSampleRate;
@@ -135,13 +113,11 @@ public class ProceduralAudioController : MonoBehaviour
         if (Input.GetKeyDown(keyCode))
         {
             isKeyDown = true;
-            dTriggerOnTime = AudioSettings.dspTime;
             targetAmplitude = dStartAmplitude;
         }
         if (Input.GetKeyUp(keyCode))
         {
             isKeyDown = false;
-            dTriggerOffTime = AudioSettings.dspTime;
             targetAmplitude = 0;
         }
     }
@@ -155,16 +131,13 @@ public class ProceduralAudioController : MonoBehaviour
 
         double preciseDspTime;
         for (int i = 0; i < dataLen; i++)
-        { // go through data chunk
+        { 
             preciseDspTime = currentDspTime + i * dspTimeStep;
             double signalValue = 0.0;
             double currentFreq = mainFrequency;
             if (useFrequencyModulation)
             {
-                //double freqOffset = (frequencyModulationOscillatorIntensity * mainFrequency * 0.75) / 100.0;
                 double modulationAmount = frequencyModulationOscillator.calculateSignalValue(preciseDspTime, frequencyModulationOscillatorFrequency);
-            //    currentFreq += mapValueD(frequencyModulationOscillator.calculateSignalValue(preciseDspTime, frequencyModulationOscillatorFrequency), -1.0, 1.0, -freqOffset, freqOffset);
-            //    frequencyModulationRangeOut = (float)frequencyModulationOscillator.calculateSignalValue(preciseDspTime, frequencyModulationOscillatorFrequency) * 0.5f + 0.5f;
                 currentFreq += modulationAmount * frequencyModulationOscillatorIntensity;
             }
             else
@@ -174,25 +147,15 @@ public class ProceduralAudioController : MonoBehaviour
 
             if (useSinusAudioWave)
             {
-                signalValue += Math.Sin(preciseDspTime * 2.0 * Math.PI * mainFrequency);
+                signalValue += sinusAudioWaveIntensity * sinusAudioWave.calculateSignalValue(preciseDspTime, currentFreq);
             }
             if (useSawAudioWave)
             {
-                signalValue += sawAudioWave.calculateSignalValue(preciseDspTime, currentFreq);
+                signalValue += sawAudioWaveIntensity * sawAudioWave.calculateSignalValue(preciseDspTime, currentFreq);
             }
             if (useSquareAudioWave)
             {
-                signalValue += squareAudioWave.calculateSignalValue(preciseDspTime, currentFreq);
-            }
-
-            if (useAmplitudeModulation)
-            {
-                signalValue *= mapValueD(amplitudeModulationOscillator.calculateSignalValue(preciseDspTime, amplitudeModulationOscillatorFrequency), -1.0, 1.0, 0.0, 1.0);
-                amplitudeModulationRangeOut = (float)amplitudeModulationOscillator.calculateSignalValue(preciseDspTime, amplitudeModulationOscillatorFrequency) * 0.5f + 0.5f;
-            }
-            else
-            {
-                amplitudeModulationRangeOut = 0.0f;
+                signalValue += squareAudioWaveIntensity * squareAudioWave.calculateSignalValue(preciseDspTime, currentFreq);
             }
 
             double amplitudeDelta = targetAmplitude - currentAmplitude;
@@ -214,10 +177,5 @@ public class ProceduralAudioController : MonoBehaviour
             }
         }
 
-    }
-    double mapValueD(double referenceValue, double fromMin, double fromMax, double toMin, double toMax)
-    {
-        /* This function maps (converts) a Double value from one range to another */
-        return toMin + (referenceValue - fromMin) * (toMax - toMin) / (fromMax - fromMin);
     }
 }

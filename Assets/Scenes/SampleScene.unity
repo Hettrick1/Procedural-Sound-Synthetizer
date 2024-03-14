@@ -154,20 +154,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 0
-  autoPlay: 0
-  mainFrequency: 261.6300048828125
+  mainFrequency: 100
   useSinusAudioWave: 1
-  sinusAudioWaveIntensity: 0.25
+  sinusAudioWaveIntensity: 0.415
   useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useAmplitudeModulation: 0
-  amplitudeModulationOscillatorFrequency: 1
   useFrequencyModulation: 1
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 10
-  amplitudeModulationRangeOut: 0
   frequencyModulationRangeOut: 0
 --- !u!82 &164885842
 AudioSource:
@@ -311,7 +307,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 5
-  autoPlay: 0
   mainFrequency: 440
   useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.25
@@ -319,12 +314,9 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useAmplitudeModulation: 0
-  amplitudeModulationOscillatorFrequency: 1
   useFrequencyModulation: 0
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 10
-  amplitudeModulationRangeOut: 0
   frequencyModulationRangeOut: 0
 --- !u!82 &344334106
 AudioSource:
@@ -468,7 +460,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 2
-  autoPlay: 0
   mainFrequency: 392
   useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.25
@@ -476,12 +467,9 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useAmplitudeModulation: 0
-  amplitudeModulationOscillatorFrequency: 1
   useFrequencyModulation: 0
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 10
-  amplitudeModulationRangeOut: 0
   frequencyModulationRangeOut: 0
 --- !u!82 &425520483
 AudioSource:
@@ -717,7 +705,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 3
-  autoPlay: 0
   mainFrequency: 293.6600036621094
   useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.25
@@ -725,12 +712,9 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useAmplitudeModulation: 0
-  amplitudeModulationOscillatorFrequency: 1
   useFrequencyModulation: 0
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 10
-  amplitudeModulationRangeOut: 0
   frequencyModulationRangeOut: 0
 --- !u!82 &641881582
 AudioSource:
@@ -854,6 +838,7 @@ GameObject:
   - component: {fileID: 788737510}
   - component: {fileID: 788737509}
   - component: {fileID: 788737508}
+  - component: {fileID: 788737511}
   m_Layer: 0
   m_Name: Fa
   m_TagString: Untagged
@@ -874,20 +859,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 4
-  autoPlay: 0
-  mainFrequency: 349.2300109863281
-  useSinusAudioWave: 1
+  mainFrequency: 440
+  useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.25
-  useSquareAudioWave: 0
+  useSquareAudioWave: 1
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useAmplitudeModulation: 0
-  amplitudeModulationOscillatorFrequency: 1
   useFrequencyModulation: 0
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 10
-  amplitudeModulationRangeOut: 0
   frequencyModulationRangeOut: 0
 --- !u!82 &788737509
 AudioSource:
@@ -1000,6 +981,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!164 &788737511
+AudioReverbFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788737507}
+  m_Enabled: 1
+  m_DryLevel: 0
+  m_Room: 0
+  m_RoomHF: 0
+  m_DecayTime: 1
+  m_DecayHFRatio: 0.5
+  m_ReflectionsLevel: -10000
+  m_ReverbLevel: 0
+  m_ReverbDelay: 0.04
+  m_Diffusion: 100
+  m_Density: 100
+  m_HFReference: 5000
+  m_RoomLF: 0
+  m_LFReference: 250
+  m_ReflectionsDelay: 0
+  m_ReverbPreset: 27
 --- !u!1 &955008535
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1035,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 1
-  autoPlay: 0
   mainFrequency: 329.6300048828125
   useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.25
@@ -1039,12 +1042,9 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useAmplitudeModulation: 0
-  amplitudeModulationOscillatorFrequency: 1
   useFrequencyModulation: 0
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 10
-  amplitudeModulationRangeOut: 0
   frequencyModulationRangeOut: 0
 --- !u!82 &955008537
 AudioSource:
@@ -1360,7 +1360,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keys: 0
-  autoPlay: 0
   mainFrequency: 500
   useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.25
@@ -1368,12 +1367,9 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useAmplitudeModulation: 0
-  amplitudeModulationOscillatorFrequency: 1
   useFrequencyModulation: 0
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 10
-  amplitudeModulationRangeOut: 0
   frequencyModulationRangeOut: 0
 --- !u!169 &1463903047
 AudioLowPassFilter:
