@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e4f4ab7519bf47bb16e3ad1eb5cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dAttackTime: 0.05
   keys: 0
   mainFrequency: 100
   useSinusAudioWave: 1
@@ -161,9 +162,9 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 1
+  useFrequencyModulation: 0
   frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 10
+  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
 --- !u!82 &164885842
 AudioSource:
@@ -306,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e4f4ab7519bf47bb16e3ad1eb5cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dAttackTime: 0.1
   keys: 5
   mainFrequency: 440
   useSinusAudioWave: 1
@@ -459,6 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e4f4ab7519bf47bb16e3ad1eb5cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dAttackTime: 0.1
   keys: 2
   mainFrequency: 392
   useSinusAudioWave: 1
@@ -704,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e4f4ab7519bf47bb16e3ad1eb5cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dAttackTime: 0.1
   keys: 3
   mainFrequency: 293.6600036621094
   useSinusAudioWave: 1
@@ -858,6 +862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e4f4ab7519bf47bb16e3ad1eb5cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dAttackTime: 0.1
   keys: 4
   mainFrequency: 440
   useSinusAudioWave: 0
@@ -1034,6 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e4f4ab7519bf47bb16e3ad1eb5cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dAttackTime: 0.1
   keys: 1
   mainFrequency: 329.6300048828125
   useSinusAudioWave: 1
@@ -1359,6 +1365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e4f4ab7519bf47bb16e3ad1eb5cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dAttackTime: 0.1
   keys: 0
   mainFrequency: 500
   useSinusAudioWave: 0

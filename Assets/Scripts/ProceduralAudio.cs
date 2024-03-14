@@ -13,7 +13,7 @@ public class ProceduralAudioController : MonoBehaviour
         T,
         Z
     }
-    double dAttackTime = 0.1;
+    public double dAttackTime = 0.1;
     double dReleaseTime = 0.2;
     double dStartAmplitude = 0.5;
 
@@ -120,6 +120,7 @@ public class ProceduralAudioController : MonoBehaviour
             isKeyDown = false;
             targetAmplitude = 0;
         }
+
     }
 
     void OnAudioFilterRead(float[] data, int channels)
@@ -137,8 +138,13 @@ public class ProceduralAudioController : MonoBehaviour
             double currentFreq = mainFrequency;
             if (useFrequencyModulation)
             {
-                double modulationAmount = frequencyModulationOscillator.calculateSignalValue(preciseDspTime, frequencyModulationOscillatorFrequency);
-                currentFreq += modulationAmount * frequencyModulationOscillatorIntensity;
+                // Descending sawtooth function with variable tempo
+                double sawtoothPhase = -preciseDspTime * 2.0 * frequencyModulationOscillatorFrequency;
+                sawtoothPhase -= Math.Floor(sawtoothPhase);
+                double sawtoothModulation = Math.Exp(sawtoothPhase * frequencyModulationOscillatorIntensity);
+
+                // Apply sawtooth modulation and frequency modulation
+                currentFreq += sawtoothModulation * frequencyModulationOscillatorIntensity;
             }
             else
             {
