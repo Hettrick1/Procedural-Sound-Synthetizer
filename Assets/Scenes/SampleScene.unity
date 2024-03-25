@@ -156,10 +156,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dAttackTime: 0.05
   keys: 0
-  mainFrequency: 261.6300048828125
-  useSinusAudioWave: 0
+  mainFrequency: 261.6099853515625
+  useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.415
-  useSquareAudioWave: 1
+  useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
@@ -167,6 +167,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 1
+  isPitchDecayActive: 0
+  pitchDecayFactor: 1
+  tempoFactor: 4
 --- !u!82 &164885842
 AudioSource:
   m_ObjectHideFlags: 0
@@ -345,6 +349,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 0
+  isPitchDecayActive: 0
+  pitchDecayFactor: 0.99
+  tempoFactor: 4
 --- !u!82 &304789076
 AudioSource:
   m_ObjectHideFlags: 0
@@ -523,6 +531,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 0
+  isPitchDecayActive: 0
+  pitchDecayFactor: 0.99
+  tempoFactor: 4
 --- !u!82 &456152962
 AudioSource:
   m_ObjectHideFlags: 0
@@ -701,6 +713,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 0
+  isPitchDecayActive: 0
+  pitchDecayFactor: 0.99
+  tempoFactor: 4
 --- !u!82 &483689394
 AudioSource:
   m_ObjectHideFlags: 0
@@ -961,9 +977,9 @@ MonoBehaviour:
   dAttackTime: 0.05
   keys: 2
   mainFrequency: 329.6300048828125
-  useSinusAudioWave: 0
+  useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.415
-  useSquareAudioWave: 1
+  useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
@@ -971,6 +987,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 1
+  isPitchDecayActive: 0
+  pitchDecayFactor: 0.99
+  tempoFactor: 4
 --- !u!82 &584159485
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1139,9 +1159,9 @@ MonoBehaviour:
   dAttackTime: 0.05
   keys: 3
   mainFrequency: 349.2300109863281
-  useSinusAudioWave: 0
+  useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.415
-  useSquareAudioWave: 1
+  useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
@@ -1149,6 +1169,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 1
+  isPitchDecayActive: 0
+  pitchDecayFactor: 0.99
+  tempoFactor: 4
 --- !u!82 &719023782
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1317,9 +1341,9 @@ MonoBehaviour:
   dAttackTime: 0.05
   keys: 1
   mainFrequency: 293.6600036621094
-  useSinusAudioWave: 0
+  useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.415
-  useSquareAudioWave: 1
+  useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
@@ -1327,6 +1351,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 1
+  isPitchDecayActive: 0
+  pitchDecayFactor: 0.99
+  tempoFactor: 4
 --- !u!82 &1002725240
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1676,6 +1704,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 10
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 0
+  isPitchDecayActive: 0
+  pitchDecayFactor: 0.99
+  tempoFactor: 4
 --- !u!169 &1463903047
 AudioLowPassFilter:
   m_ObjectHideFlags: 0
@@ -1791,6 +1823,10 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
+  useExponentialPitchDecay: 0
+  isPitchDecayActive: 0
+  pitchDecayFactor: 0.99
+  tempoFactor: 4
 --- !u!82 &1678606831
 AudioSource:
   m_ObjectHideFlags: 0

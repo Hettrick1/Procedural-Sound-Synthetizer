@@ -65,6 +65,18 @@ public class ProceduralAudioController : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float frequencyModulationRangeOut;
 
+    [Header("Exponential Pitch Decay")]
+    public bool useExponentialPitchDecay;
+    public bool isPitchDecayActive;
+    [Range(0.0f, 1.0f)]
+    public float pitchDecayFactor = 0.99f;
+    [Range(1f, 10.0f)]
+    public float tempoFactor = 4f;
+    private float initialDecayFactor;
+
+    private float pitchDecayFactorTarget = 0f;
+    private float pitchDecayFactorSmoothing = 0.1f;
+
     bool isKeyDown;
 
     AudioReverbFilter filter;
@@ -79,6 +91,8 @@ public class ProceduralAudioController : MonoBehaviour
     double dspTimeStep;
     double currentDspTime;
 
+    private double baseFrequency;
+
     void Awake()
     {
         sawAudioWave = new SawWave();
@@ -88,6 +102,9 @@ public class ProceduralAudioController : MonoBehaviour
         frequencyModulationOscillator = new SawWave();
 
         sampleRate = AudioSettings.outputSampleRate;
+
+        baseFrequency = mainFrequency;
+        initialDecayFactor = pitchDecayFactor;
 
         switch (keys)
         {
@@ -125,13 +142,20 @@ public class ProceduralAudioController : MonoBehaviour
         {
             isKeyDown = true;
             targetAmplitude = dStartAmplitude;
+            baseFrequency = mainFrequency;
+            isPitchDecayActive = true;
+            pitchDecayFactor = initialDecayFactor;
         }
         if (Input.GetKeyUp(keyCode))
         {
             isKeyDown = false;
             targetAmplitude = 0;
+            pitchDecayFactorTarget = 0f;
         }
-
+        if (isPitchDecayActive)
+        {
+            pitchDecayFactor = Mathf.Lerp(pitchDecayFactor, pitchDecayFactorTarget, pitchDecayFactorSmoothing * tempoFactor * Time.deltaTime);
+        }
     }
 
     void OnAudioFilterRead(float[] data, int channels)
@@ -146,20 +170,27 @@ public class ProceduralAudioController : MonoBehaviour
         { 
             preciseDspTime = currentDspTime + i * dspTimeStep;
             double signalValue = 0.0;
-            double currentFreq = mainFrequency;
-            if (useFrequencyModulation)
-            {
-                // Descending sawtooth function with variable tempo
-                double sawtoothPhase = -preciseDspTime * 2.0 * frequencyModulationOscillatorFrequency;
-                sawtoothPhase -= Math.Floor(sawtoothPhase);
-                double sawtoothModulation = Math.Exp(sawtoothPhase * frequencyModulationOscillatorIntensity);
 
-                // Apply sawtooth modulation and frequency modulation
-                currentFreq += sawtoothModulation * frequencyModulationOscillatorIntensity;
-            }
-            else
+            double currentFreq = mainFrequency;
+
+            if (isPitchDecayActive && useExponentialPitchDecay)
             {
-                frequencyModulationRangeOut = 0.0f;
+                currentFreq *= pitchDecayFactor;
+                if(pitchDecayFactor < 0.7)
+                {
+                    if (isKeyDown)
+                    {
+                        pitchDecayFactor = initialDecayFactor;
+                    }
+                    else if (currentAmplitude > 0.001f)
+                    {
+                        currentFreq *= pitchDecayFactor;
+                    }
+                    else
+                    {
+                        isPitchDecayActive = false;
+                    }
+                }
             }
 
             if (useSinusAudioWave)
