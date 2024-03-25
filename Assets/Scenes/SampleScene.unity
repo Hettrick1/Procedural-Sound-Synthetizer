@@ -167,7 +167,7 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
-  useExponentialPitchDecay: 1
+  useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 1
   tempoFactor: 4
@@ -987,7 +987,7 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
-  useExponentialPitchDecay: 1
+  useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
   tempoFactor: 4
@@ -1169,7 +1169,7 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
-  useExponentialPitchDecay: 1
+  useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
   tempoFactor: 4
@@ -1351,7 +1351,7 @@ MonoBehaviour:
   frequencyModulationOscillatorFrequency: 1
   frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
-  useExponentialPitchDecay: 1
+  useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
   tempoFactor: 4
