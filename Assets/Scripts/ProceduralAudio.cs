@@ -30,8 +30,6 @@ public class ProceduralAudioController : MonoBehaviour
     SquareWave squareAudioWave;
     SinusWave sinusAudioWave;
 
-    SawWave frequencyModulationOscillator;
-
     [Header("Volume / Frequency")]
     [Range(0.0f, 1.0f)]
     float masterVolume = 0.1f;
@@ -54,12 +52,12 @@ public class ProceduralAudioController : MonoBehaviour
 
     [Space(10)]
 
-    [Header("Frequency Modulation")]
-    public bool useFrequencyModulation;
-    [Range(0.2f, 30.0f)]
-    public float frequencyModulationOscillatorFrequency = 1.0f;
-    [Range(1.0f, 100.0f)]
-    public float frequencyModulationOscillatorIntensity = 10.0f;
+    //[Header("Frequency Modulation")]
+    //public bool useFrequencyModulation;
+    //[Range(0.2f, 30.0f)]
+    //public float frequencyModulationOscillatorFrequency = 1.0f;
+    //[Range(1.0f, 100.0f)]
+    //public float frequencyModulationOscillatorIntensity = 10.0f;
 
     [Header("Out Values")]
     [Range(0.0f, 1.0f)]
@@ -81,9 +79,6 @@ public class ProceduralAudioController : MonoBehaviour
 
     AudioReverbFilter filter;
 
-    float mainFrequencyPreviousValue;
-    private System.Random RandomNumber = new System.Random();
-
     private double sampleRate;  // samples per second
                                 //private double myDspTime;	// dsp time
     private double dataLen;     // the data length of each channel
@@ -91,19 +86,14 @@ public class ProceduralAudioController : MonoBehaviour
     double dspTimeStep;
     double currentDspTime;
 
-    private double baseFrequency;
-
     void Awake()
     {
         sawAudioWave = new SawWave();
         squareAudioWave = new SquareWave();
         sinusAudioWave = new SinusWave();
 
-        frequencyModulationOscillator = new SawWave();
-
         sampleRate = AudioSettings.outputSampleRate;
 
-        baseFrequency = mainFrequency;
         initialDecayFactor = pitchDecayFactor;
 
         switch (keys)
@@ -142,7 +132,6 @@ public class ProceduralAudioController : MonoBehaviour
         {
             isKeyDown = true;
             targetAmplitude = dStartAmplitude;
-            baseFrequency = mainFrequency;
             isPitchDecayActive = true;
             pitchDecayFactor = initialDecayFactor;
         }

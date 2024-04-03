@@ -157,15 +157,12 @@ MonoBehaviour:
   dAttackTime: 0.05
   keys: 0
   mainFrequency: 261.6099853515625
-  useSinusAudioWave: 1
+  useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.415
   useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 0
+  useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
@@ -341,13 +338,10 @@ MonoBehaviour:
   mainFrequency: 392
   useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.415
-  useSquareAudioWave: 1
+  useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 0
+  useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
@@ -523,13 +517,10 @@ MonoBehaviour:
   mainFrequency: 440
   useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.415
-  useSquareAudioWave: 1
+  useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 0
+  useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
@@ -705,13 +696,10 @@ MonoBehaviour:
   mainFrequency: 523.25
   useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.415
-  useSquareAudioWave: 1
+  useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 0
+  useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
@@ -977,15 +965,12 @@ MonoBehaviour:
   dAttackTime: 0.05
   keys: 2
   mainFrequency: 329.6300048828125
-  useSinusAudioWave: 1
+  useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.415
   useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 0
+  useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
@@ -1159,15 +1144,12 @@ MonoBehaviour:
   dAttackTime: 0.05
   keys: 3
   mainFrequency: 349.2300109863281
-  useSinusAudioWave: 1
+  useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.415
   useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 0
+  useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
@@ -1341,15 +1323,12 @@ MonoBehaviour:
   dAttackTime: 0.05
   keys: 1
   mainFrequency: 293.6600036621094
-  useSinusAudioWave: 1
+  useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.415
   useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 0
+  useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
@@ -1700,9 +1679,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 10
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
@@ -1815,13 +1791,10 @@ MonoBehaviour:
   mainFrequency: 493.8800048828125
   useSinusAudioWave: 0
   sinusAudioWaveIntensity: 0.415
-  useSquareAudioWave: 1
+  useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 0
+  useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  useFrequencyModulation: 0
-  frequencyModulationOscillatorFrequency: 1
-  frequencyModulationOscillatorIntensity: 2.6
   frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
