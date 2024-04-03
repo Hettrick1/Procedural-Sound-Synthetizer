@@ -154,16 +154,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348e4f4ab7519bf47bb16e3ad1eb5cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dAttackTime: 0.05
+  dAttackTime: 0.1
   keys: 0
   mainFrequency: 261.6099853515625
-  useSinusAudioWave: 0
+  useSinusAudioWave: 1
   sinusAudioWaveIntensity: 0.415
   useSquareAudioWave: 0
   squareAudioWaveIntensity: 0.25
-  useSawAudioWave: 1
+  useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 1
@@ -182,7 +181,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -342,7 +341,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
@@ -521,7 +519,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
@@ -700,7 +697,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
@@ -971,7 +967,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
@@ -1150,7 +1145,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
@@ -1329,7 +1323,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
@@ -1679,7 +1672,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 0
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99
@@ -1795,7 +1787,6 @@ MonoBehaviour:
   squareAudioWaveIntensity: 0.25
   useSawAudioWave: 1
   sawAudioWaveIntensity: 0.25
-  frequencyModulationRangeOut: 0
   useExponentialPitchDecay: 0
   isPitchDecayActive: 0
   pitchDecayFactor: 0.99

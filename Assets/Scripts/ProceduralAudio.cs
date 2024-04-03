@@ -50,19 +50,6 @@ public class ProceduralAudioController : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float sawAudioWaveIntensity = 0.25f;
 
-    [Space(10)]
-
-    //[Header("Frequency Modulation")]
-    //public bool useFrequencyModulation;
-    //[Range(0.2f, 30.0f)]
-    //public float frequencyModulationOscillatorFrequency = 1.0f;
-    //[Range(1.0f, 100.0f)]
-    //public float frequencyModulationOscillatorIntensity = 10.0f;
-
-    [Header("Out Values")]
-    [Range(0.0f, 1.0f)]
-    public float frequencyModulationRangeOut;
-
     [Header("Exponential Pitch Decay")]
     public bool useExponentialPitchDecay;
     public bool isPitchDecayActive;
